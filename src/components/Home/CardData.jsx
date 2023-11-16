@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useState } from "react";
+import "./Translate.css"
 
 import { getProducts } from "../../constants";
 const products = await getProducts();
@@ -76,51 +77,65 @@ function CardData({ cart, setCart }) {
 
 
     <div className="bg-orange-100 w-full">
-      <p className="text-sm text-center py-4 bg-black text-white">
+      <p className="text-sm text-center py-4 bg-gray-300 text-black">
         <span className="font-bold text-2xl">Treat yourself to a new Mobile Phone</span>
         <br />
-        <p className="text-sm text-center py-8 bg-black text-white font-serif">
-  <span className="block text-4xl font-bold mb-4">Discover a New World with Our Mobile Phones</span>
-  <span className="block text-lg">
-    Experience the convenience at your fingertips! Whether it's work, socializing, booking a ride, playing games, listening to music, watching your favorite shows, taking a photo, or making a call — our Mobile Phones from Croma do it all and then some.
-  </span>
-</p>
-
+        <p className="text-sm text-center py-8 bg-gray-300 text-black font-serif">
+          <span className="block text-4xl font-bold mb-4">Discover a New World with Our Mobile Phones</span>
+          <span className="block text-lg">
+            Experience the convenience at your fingertips! Whether it's work, socializing, booking a ride, playing games, listening to music, watching your favorite shows, taking a photo, or making a call — our Mobile Phones from Croma do it all and then some.
+          </span>
+        </p>
       </p>
+      <div
+        className="text-2xl font-bold text-orange-700 italic"
+        style={{
+          animation: 'moveLeftToRight 14s linear infinite', // Customize the animation duration and other properties
+        }}
+      >
+        Hurry Up! If you order early, you will get a free tempered glass, and home delivery is available.
+      </div>
+
 
 
       <div className="flex items-center justify-between bg-gray-400">
-        <input
-          type="text"
-          placeholder="Search..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="border-2 border-gray-400 rounded-md outline-none p-2 ml-8 "
-        />
-        <button
-          onClick={handleSearch}
-          className="border-2 m-2 p-1.5 bg-blue-600 hover:bg-blue-400 rounded-md text-white"
-        >
-          Search
-        </button>
-        <button
-          onClick={sortPriceAscending}
-          className="border-2 m-2 p-1.5 bg-green-600 hover:bg-green-400 rounded-md text-white"
-        >
-          Sort Price Ascending
-        </button>
-        <button
-          onClick={sortPriceDescending}
-          className="border-2 m-2 p-1.5 bg-red-600 hover:bg-red-400 rounded-md text-white"
-        >
-          Sort Price Descending
-        </button>
-        <button
-          onClick={clearAllFilters}
-          className="border-2 m-2 p-1.5 bg-[#440a5e] hover:bg-[#7f4699] rounded-md text-white"
-        >
-          Clear All Filters
-        </button>
+        <div className="flex items-center">
+          <input
+            type="text"
+            placeholder="Search..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="border-2 border-gray-400 rounded-md outline-none p-2 ml-8"
+          />
+          <button
+            onClick={handleSearch}
+            className="border-2 m-2 p-1.5 bg-gray-600 hover:bg-blue-400 rounded-md text-white"
+          >
+            Search
+          </button>
+        </div>
+
+        <div className="flex justify-end space-x-4">
+          <button
+            onClick={sortPriceAscending}
+            className="border-2 p-1.5 bg-gray-600 hover:bg-blue-400 rounded-md text-white"
+          >
+            Sort Price Ascending
+          </button>
+          <button
+            onClick={sortPriceDescending}
+            className="border-2 p-1.5 bg-gray-600 hover:bg-blue-400 rounded-md text-white"
+          >
+            Sort Price Descending
+          </button>
+          <button
+            onClick={clearAllFilters}
+            className="border-2 p-1.5 bg-gray-600 hover:bg-blue-400 rounded-md text-white"
+          >
+            Clear All Filters
+          </button>
+        </div>
+
       </div>
       <div className="flex flex-wrap ">
         {searchResults.map((product, index) => (

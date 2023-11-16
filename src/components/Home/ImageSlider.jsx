@@ -26,7 +26,7 @@ function ImageSlider() {
     setCurrent(current === 0 ? images.length - 1 : current - 1);
   }
   return (
-    <div className="flex flex-col sm:flex-row items-center justify-center h-75 bg-gray-300">
+    <div className="flex flex-col sm:flex-row items-center justify-center h-80 bg-gray-300">
       <button className="p-4 text-white m-2 sm:m-0" onClick={prevSlide}>
         <FcPrevious size={30} className='m-2 p-2 bg-gray-300'/>
       </button>

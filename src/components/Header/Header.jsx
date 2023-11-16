@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import image from "./image.png"
 
 import { Link, NavLink } from "react-router-dom";
 import { BsCart2 } from "react-icons/bs";
@@ -22,8 +23,9 @@ export default function Header({ cart, toggleCart }) {
         <div className="flex flex-wrap justify-between items-center mx-auto max-w-screen-xl">
           <Link to="/" className="flex items-center">
             <img
-              src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
-              className="mr-3 h-12"
+              //src="https://alexharkness.com/wp-content/uploads/2020/06/logo-2.png"
+              src={image}
+              className="mr-3 h-16"
               alt="Logo"
             />
           </Link>
